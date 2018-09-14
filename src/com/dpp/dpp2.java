@@ -6,25 +6,18 @@ public class dpp2 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        Double valutaKol = Double.parseDouble(scanner.nextLine());
-        Double valutaSource = scanner.nextLine();
-        Double valutaDest = scanner.nextLine();
 
-        Double bgn = 1;
-        Double usd = 1.79549;
-        Double eur = 1.95583;
-        Double gbp = 2.53405;
-        Double valutaExit = 0.0;
+        Double l = Double.parseDouble(scanner.nextLine());
+        Double w = Double.parseDouble(scanner.nextLine());
+        Double a = Double.parseDouble(scanner.nextLine());
 
-        if (valutaSource.equals("BGN") && valutaDest.equals("USD")){valutaExit = valutaKol / usd;}
-        if (valutaSource.equals("BGN") && valutaDest.equals("EUR")){valutaExit = valutaKol / eur;}
-        if (valutaSource.equals("BGN") && valutaDest.equals("GBP")){valutaExit = valutaKol / gbp;}
+        Double s1 = ((l*100)*(w*100));
+        Double s3 = ((a*100)*(a*100));
+        Double s2 = (s1 / 10);
+        Double freeSp = (s1 - s3 - s2);
+        Double dancers = (freeSp / (40 + 7000));
 
-        if (valutaSource.equals("USD") && valutaDest.equals("BGN")){valutaExit = valutaKol * usd;}
-        if (valutaSource.equals("EUR") && valutaDest.equals("BGN")){valutaExit = valutaKol * eur;}
-        if (valutaSource.equals("BGP") && valutaDest.equals("BGN")){valutaExit = valutaKol * gbp;}
-
-        System.out.printf("%.2f %s\n", valutaExit, valutaDest);
+        System.out.printf("%.0f\n", Math.floor(dancers));
     }
 
 }
